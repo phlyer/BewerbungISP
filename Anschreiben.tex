@@ -1,0 +1,136 @@
+
+
+\documentclass[sans,11pt,a4paper]{moderncv}
+
+\linespread {1.175}
+
+
+% moderncv themes
+%\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\moderncvtheme[blue]{casual}                % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+\usepackage[ngerman]{babel}
+
+% adjust the page margins
+\usepackage[scale=0.85]{geometry}
+\recomputelengths                             % required when changes are made to page layout lengths
+
+
+
+
+
+% personal data
+\firstname{Philipp}
+%\middlename{}
+\familyname{Lindner}
+%\title{Resumé title (optional)}               % optional, remove the line if not wanted
+\address{Ruschgraben 38}{76139 Karlsruhe}    % optional, remove the line if not wanted
+\mobile{+49 162 89\,33\,00\,8}                    % optional, remove the line if not wanted
+%\phone{+49 30 68\,81\,12\,30}                      % optional, remove the line if not wanted
+%\fax{+49 6201 80\,66\,98}                          % optional, remove the line if not wanted
+\email{pl@xq0.net}                          % optional, remove the line if not wanted
+%\email{lindner@inwi.org}                        % optional, remove the line if not wanted
+%\extrainfo{www.squealj.net} % optional, remove the line if not wanted
+%\photo[96pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{* 28. September 1989}                 % optional, remove the line if not wanted
+
+\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+
+
+
+\makeatletter
+%\AtBeginDocument
+%{
+% reverse the name and photo
+\renewcommand*{\makecvtitle}{%
+  \recomputecvlengths%
+  \makecvfooter%
+  % define optional picture
+  \newbox{\makecvtitlepicturebox}%
+  \savebox{\makecvtitlepicturebox}{%
+    \ifthenelse{\isundefined{\@photo}}%
+      {
+        \@initializelength{\makecvtitlepicturewidth}% Damit Länge bekannt bei Name
+        \settowidth{\makecvtitlepicturewidth}{0pt}%
+      }%
+      {%
+       \setlength\fboxrule{\@photoframewidth}%
+       \ifdim\@photoframewidth=0pt%
+         \setlength{\fboxsep}{0pt}\fi%
+       {\color{color1}\framebox{\includegraphics[width=\@photowidth]{\@photo}}}}
+        \@initializelength{\makecvtitlepicturewidth}% Damit Länge bekannt bei Name
+        \settowidth{\makecvtitlepicturewidth}{\usebox{\makecvtitlepicturebox}}%
+      }%
+  % end define optional picture
+
+  % name
+%    \parbox[b]{\textwidth-\makecvtitlepicturewidth}{%
+ {   \raggedright\namefont{\color{color2}\MakeLowercase{\@firstname}}\color{color1}\MakeLowercase{\@familyname}}%\lastname -> error
+    \hfill\usebox{\makecvtitlepicturebox}%
+%    \parbox[b]{\textwidth-\makecvtitlepicturewidth}{%
+%   \raggedleft\namefont{\color{color2!50}\@firstname} {\color{color2}\@lastname}}%\familyname
+\\[-.35em]%
+  {\color{color2}\rule{\textwidth}{.25ex}}%
+  % optional title
+  \ifthenelse{\equal{\@title}{}}{}{\\[1.25em]\null\hfill\titlestyle{\@title}}\\[0.0em]% 
+  % optional quote
+  \ifthenelse{\isundefined{\@quote}}%
+    {}%
+    {{\null\hfill\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\hfill\null\\[2.5em]}}%
+  \par}% 
+%}% AtBeginDocument ende
+\makeatother
+
+
+\begin{document}
+\vspace*{2.10cm}
+\makecvtitle
+\linespread {0.9}
+Frau Miriam Busch\\
+Institut für Informationswirtschaft und Marketing (IISM)\\
+Forschungsgruppe Information \& Market Engineering \\
+Fritz-Erler-Straße 23\\
+D- 76133 Karlsruhe \\
+
+\linespread {1.175}
+\vspace*{1.5cm}
+
+\begin{flushright}
+	Karlsruhe, den \today
+\end{flushright}
+
+\textbf{Bewerbung als wissenschaftlicher Mitarbeiter mit Möglichkeit zur Promotion im Bereich\\ \glqq Ökonomische
+	Bewertung von Flexibilität im Smart Grid\grqq} \\
+
+Sehr geehrte Frau Busch,\\
+
+% kurze Einleitung
+
+% Werdegang und Motivation
+Im April habe ich meinen Master of Science in Informationswirtschaft am Karlsruher Institut für Technologie gemacht und mich danach auf eine Reise mit dem Zug von Deutschland bis nach Asien begeben. 
+
+% Der Studiengang und Inhalte
+Durch mein Studium der Informationswirtschaft und seiner interdisziplinären Prägung ist es mir möglich die Kernkonzepte der Wirtschaftswissenschaften mit denen der Informatik zu vereinen. 
+
+% Persönliche Eignung
+
+Aufgrund meiner ersten Berufserfahrung und meinem ehrenamtlichen Engagement besitze ich außerdem eine motivierte und strukturierte Arbeitsweise, grundlegende Kenntnisse in der Softwareentwicklung, viel Erfahrung in der Zusammenarbeit und Organisation im Team sowie eine problemorientierte Denkweise. 
+
+Im Rahmen meiner Masterthesis habe ich mich intensiv mit den technischen"=, wirtschaftlichen"= und IT"=Aspekten von Energiemärkten sowie "=netzen beschäftigt und ein großes Interesse daran entwickelt, welches ich gerne im Rahmen weiterer wissenschaftlicher Arbeit nutzen möchte. 
+
+% Wunsch und Zeitraum
+Sehr gerne würde ich zu einem baldmöglichen Termin die Tätigkeit als wissenschaftlicher Mitarbeiter mit der Möglichkeit zur Promotion bei Ihnen aufnehmen. Ich freue mich deshalb auf Ihre Einladung zu einem persönlichen Gespräch.\\\\
+
+Mit freundlichen Grüßen\\
+\includegraphics[scale=0.75]{Unterschrift}
+\\Philipp Lindner
+
+\closesection{}                   % needed to renewcommands
+
+ 
+\end{document}
+
+
