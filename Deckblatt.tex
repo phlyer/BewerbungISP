@@ -1,0 +1,103 @@
+
+
+\documentclass[sans,11pt,a4paper]{moderncv}
+
+\linespread {1.175}
+
+
+% moderncv themes
+%\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\moderncvtheme[blue]{casual}                % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+\usepackage[ngerman]{babel}
+
+% adjust the page margins
+\usepackage[scale=0.85]{geometry}
+\recomputelengths                             % required when changes are made to page layout lengths
+
+
+
+
+
+% personal data
+\firstname{Philipp}
+%\middlename{}
+\familyname{Lindner}
+%\title{Resumé title (optional)}               % optional, remove the line if not wanted
+\address{Ruschgraben 38}{76139 Karlsruhe}    % optional, remove the line if not wanted
+\mobile{+49 162 89\,33\,00\,8}                    % optional, remove the line if not wanted
+%\phone{+49 30 68\,81\,12\,30}                      % optional, remove the line if not wanted
+%\fax{+49 6201 80\,66\,98}                          % optional, remove the line if not wanted
+\email{lindner@inwi.org}                      % optional, remove the line if not wanted
+%\extrainfo{www.squealj.net} % optional, remove the line if not wanted
+%\photo[96pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{* 28. September 1989}                 % optional, remove the line if not wanted
+
+\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+
+
+
+\makeatletter
+%\AtBeginDocument
+%{
+% reverse the name and photo
+\renewcommand*{\makecvtitle}{%
+  \recomputecvlengths%
+  \makecvfooter%
+  % define optional picture
+  \newbox{\makecvtitlepicturebox}%
+  \savebox{\makecvtitlepicturebox}{%
+    \ifthenelse{\isundefined{\@photo}}%
+      {
+        \@initializelength{\makecvtitlepicturewidth}% Damit Länge bekannt bei Name
+        \settowidth{\makecvtitlepicturewidth}{0pt}%
+      }%
+      {%
+       \setlength\fboxrule{\@photoframewidth}%
+       \ifdim\@photoframewidth=0pt%
+         \setlength{\fboxsep}{0pt}\fi%
+       {\color{color1}\framebox{\includegraphics[width=\@photowidth]{\@photo}}}}
+        \@initializelength{\makecvtitlepicturewidth}% Damit Länge bekannt bei Name
+        \settowidth{\makecvtitlepicturewidth}{\usebox{\makecvtitlepicturebox}}%
+      }%
+  % end define optional picture
+
+  % name
+%    \parbox[b]{\textwidth-\makecvtitlepicturewidth}{%
+ {   \raggedright\namefont{\color{color2}\MakeLowercase{\@firstname}}\color{color1}\MakeLowercase{\@familyname}}%\lastname -> error
+    \hfill\usebox{\makecvtitlepicturebox}%
+%    \parbox[b]{\textwidth-\makecvtitlepicturewidth}{%
+%   \raggedleft\namefont{\color{color2!50}\@firstname} {\color{color2}\@lastname}}%\familyname
+\\[-.35em]%
+  {\color{color2}\rule{\textwidth}{.25ex}}%
+  % optional title
+  \ifthenelse{\equal{\@title}{}}{}{\\[1.25em]\null\hfill\titlestyle{\@title}}\\[0.0em]% 
+  % optional quote
+  \ifthenelse{\isundefined{\@quote}}%
+    {}%
+    {{\null\hfill\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\hfill\null\\[2.5em]}}%
+  \par}% 
+%}% AtBeginDocument ende
+\makeatother
+
+
+\begin{document}
+\vspace*{2.10cm}
+\makecvtitle
+
+
+
+
+\vspace*{3.5cm}
+\begin{center}
+\includegraphics[scale=0.125]{picture} 
+\\\textbf{Bewerbung für ein Praktikum in der Strategie- und Fachberatung}
+\\ec4u expert consulting ag
+\end{center}
+\end{document}
+
+
+%% end of file `template_en.tex'.
